@@ -35,26 +35,30 @@ import {
   Eye,
 } from "lucide-react";
 
-const soundMap: Record<string, HTMLAudioElement> = {
-  rain: new Audio("/rain.mp3"),
-  ocean: new Audio("/waves.mp3"),
-  forest: new Audio("/forest.mp3"),
-  thunder: new Audio("/thunder.mp3"),
-  wind: new Audio("/wind.mp3"),
-  fire: new Audio("/fireplace.mp3"),
-  "white-noise": new Audio("/white-noise.mp3"),
-  "pink-noise": new Audio("/pink-noise.mp3"),
-  "brown-noise": new Audio("/brown-noise.mp3"),
-  space: new Audio("/space.mp3"),
-  meditation: new Audio("/meditation.mp3"),
-  delta: new Audio("/delta.mp3"),
-  theta: new Audio("/theta.mp3"),
-  birds: new Audio("/morning-birds.mp3"),
-  chimes: new Audio("/wind-chimes.mp3"),
-  piano: new Audio("/gentle-piano.mp3"),
-  bells: new Audio("/temple-bell.mp3"),
-  awakening: new Audio("/awakening-melody.mp3"),
-};
+let soundMap: Record<string, HTMLAudioElement> = {};
+
+if (typeof window !== "undefined") {
+  soundMap = {
+    rain: new Audio("/rain.mp3"),
+    ocean: new Audio("/waves.mp3"),
+    forest: new Audio("/forest.mp3"),
+    thunder: new Audio("/thunder.mp3"),
+    wind: new Audio("/wind.mp3"),
+    fire: new Audio("/fireplace.mp3"),
+    "white-noise": new Audio("/white-noise.mp3"),
+    "pink-noise": new Audio("/pink-noise.mp3"),
+    "brown-noise": new Audio("/brown-noise.mp3"),
+    space: new Audio("/space.mp3"),
+    meditation: new Audio("/meditation.mp3"),
+    delta: new Audio("/delta.mp3"),
+    theta: new Audio("/theta.mp3"),
+    birds: new Audio("/morning-birds.mp3"),
+    chimes: new Audio("/wind-chimes.mp3"),
+    piano: new Audio("/gentle-piano.mp3"),
+    bells: new Audio("/temple-bell.mp3"),
+    awakening: new Audio("/awakening-melody.mp3"),
+  };
+}
 
 // Focus color themes
 const focusThemes = [
